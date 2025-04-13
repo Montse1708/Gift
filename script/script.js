@@ -1,14 +1,13 @@
-document.querySelectorAll('.balloon').forEach(balloon => {
-    balloon.addEventListener('click', function() {
-      // Desaparece el globo
-      balloon.classList.add('exploded');
-  
-      // Muestra el mensaje en la misma posición que el globo
-      const message = balloon.querySelector('.message');
-      setTimeout(() => {
-        message.style.display = 'block';
-        message.style.opacity = '1';
-      }, 500); // Espera medio segundo para mostrar el mensaje
-    });
+// Espera hasta que termine la animación del pastel
+setTimeout(() => {
+    const btnContainer = document.getElementById('sorpresaBtnContainer');
+    btnContainer.classList.remove('oculto');
+    btnContainer.classList.add('fade-in'); // agrega la animación de aparición
+  }, 6500); // Aparece después de 6.5 segundos
+ 
+  // Redirige al hacer clic en el botón
+  document.getElementById('sorpresaBtnContainer').addEventListener('click', function() {
+    // Cambia la URL a la página de destino
+    window.location.href = 'gift.html';  // Reemplaza con la URL de destino
   });
-  
+    
