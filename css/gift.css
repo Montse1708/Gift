@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300italic');
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, rgba(42,123,155,1) 0%, rgba(87,199,133,1) 50%, rgba(140,138,135,1) 100%);
+  overflow: hidden;
+}
+
+.text {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.h1{
+    margin-top: 50px;
+}
+
+.gift-container {
+  position: relative;
+  width: 90vw;
+  max-width: 800px;
+  aspect-ratio: 1 / 1;
+  z-index: 1;
+}
+
+.gift {
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-in-out;
+}
+
+.gift-box {
+  fill: #ff0000;
+}
+
+.gift-lid-group {
+  transition: transform 1s ease-in-out;
+  transform-origin: center center;
+}
+
+.gift-lid {
+  fill: #041291;
+}
+
+.gift-bow-img {
+  position: absolute;
+  top: 235px; /* Ajusta para situar la imagen sobre la tapa */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45%;
+  z-index: 2;
+  transition: transform 1s ease-in-out;
+}
+
+.gift-message {
+  display: none;
+  font-size: 2em;
+  color: #fff;
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.open-gift-btn {
+  position: absolute; /* Coloca el botón sobre la caja */
+  top: 10%;  /* Centrado verticalmente sobre la caja */
+  left: 50%;  /* Centrado horizontalmente sobre la caja */
+  transform: translate(-50%, -50%);  /* Ajusta para centrar el botón correctamente */
+  background: linear-gradient(135deg, #385474, #35886b);
+  color: white;
+  padding: 20px 30px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 3;  /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.open-gift-btn:hover {
+  background-color: #ff6a00;
+}
+
+.open-gift-btn:focus {
+  outline: none;
+}

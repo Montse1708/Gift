@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarjeta de Cumpleaños</title>
+    <link rel="stylesheet" href="/css/letter.css">
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-side card-front">
+                <div class="ribbon">🎉 ¡Feliz Cumpleaños! 🎉</div>
+                <div class="emojis top-left">🎈</div>
+                <div class="emojis top-right">💖</div>
+                <h2>Haz clic para abrir tu sorpresa</h2>
+                <p>Con todo mi amor 💖</p>
+                <div class="emojis bottom-left">🎁</div>
+                <div class="emojis bottom-right">🍰</div>
+            </div>
+
+            <div class="card-side card-back">
+                <h3>Mi persona favorita...</h3>
+                <p>
+                    Feliz cumpleaños número 26 mi amor <br> 
+                    Mi amor hoy es un día muy especial, porque hoy celebramos tu cumpleaños número 26. Muchas gracias por permitirme pasarlo a tu lado, haciéndote
+                    tan feliz como me haces a mí. Este es uno más de los muchos más cumpleaños que nos faltan por vivirlos juntos. 
+                    No puedo creer como es que tan rápido pasa el tiempo, sin embargo, lo que más me hace feliz es poder seguir viviendo juntos momentos especiales como el día de hoy.
+                    Muchas felicidades mi amor, te deseo lo mejor hoy y siempre, que todos tus sueños y tus metas se cumplan, porque yo siempre voy a estar a tu lado ayudandote a cumplirlos.
+                    Eres mi todo mi amor, no se que haría sin tí, para mí, mi mayor prioridad es tu felicidad, por eso siempre voy a estar a tu lado haciéndote muy feliz mi amor.
+                    Hoy quiero recordarte cuánto significas para mí. Gracias por compartir tu sonrisa, tu tiempo, y tu corazón. <br><br>
+                    Que este nuevo año te regale felicidad, salud y muchos sueños cumplidos. 🥰<br><br>
+                    ¡Te amo muchisisisisisisisisisisimo mi amor! 💫
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCard(card) {
+            card.classList.toggle('is-open');
+        }
+    </script>
+
+</body>
+</html>

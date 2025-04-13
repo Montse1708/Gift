@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic);
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  scrollbar-width: none;
+  overflow: hidden;
+}
+
+body {
+    background: #2A7B9B;
+    background: linear-gradient(135deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(140, 138, 135, 1) 100%);
+    height: 100vh; /* Asegura que el fondo cubra toda la altura de la página */
+    margin: 0; /* Elimina cualquier margen predeterminado */
+}
+
+.name {
+  font-size: .8cm;
+  font-weight: 600;
+}
+
+#cake {
+  display: block;
+  position: relative;
+  margin: -10em auto 0 auto;
+}
+
+/* ============================================== Candle */
+.cake {
+  background: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: 228px;
+  left: 50%;
+  margin-left: -2.4px;
+  margin-top: -8.33333333px;
+  width: 5px;
+  height: 35px;
+  transform: translateY(-300px);
+  backface-visibility: hidden;
+  animation: in 500ms 6s ease-out forwards;
+}
+
+.cake:after,
+.cake:before {
+  background: rgba(255, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.22222222px;
+}
+
+.cake:after {
+  top: 25%;
+  left: 0;
+}
+
+.cake:before {
+  top: 45%;
+  left: 0;
+}
+
+/* ============================================== Fire */
+.fuego {
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -2.6px;
+  width: 6.66666667px;
+  height: 18px;
+}
+
+.fuego:nth-child(1) {
+  animation: fuego 2s 6.5s infinite;
+}
+
+.fuego:nth-child(2) {
+  animation: fuego 1.5s 6.5s infinite;
+}
+
+.fuego:nth-child(3) {
+  animation: fuego 1s 6.5s infinite;
+}
+
+.fuego:nth-child(4) {
+  animation: fuego 0.5s 6.5s infinite;
+}
+
+.fuego:nth-child(5) {
+  animation: fuego 0.2s 6.5s infinite;
+}
+
+/* ============================================== Animation Fire */
+@keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+@keyframes in {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.text {
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-style:italic;
+  text-align: center;
+}
+
+h1 {
+  font-size: .8cm;
+}
+
+/* Botón */
+.boton-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .boton-sorpresa {
+    background: linear-gradient(135deg, #53759c, #68c7a3);
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .boton-sorpresa i {
+    margin-right: 8px;
+  }
+  
+  .boton-sorpresa:hover {
+    background-color: #fbbf24;
+  }
+  
+  .oculto {
+    display: none;
+  }
+
+  /* Animación fade-in con desplazamiento hacia arriba */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  /* Para ocultar inicialmente el botón */
+  .oculto {
+    visibility: hidden;
+  }
+  

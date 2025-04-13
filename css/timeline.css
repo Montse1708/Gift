@@ -1,0 +1,87 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #d9534f;
+  }
+  
+  /* Estilos de la línea del tiempo */
+  .timeline {
+    position: relative;
+    padding-left: 50px;
+  }
+  
+  .event {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .event .dot {
+    width: 30px;
+    height: 30px;
+    background-color: #d9534f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    left: -50px;
+    z-index: 1;
+  }
+  
+  .event-content {
+    padding-left: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .event-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .event p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .event small {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .event:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    width: 50px;
+    height: 2px;
+    background-color: #d9534f;
+    z-index: 0;
+  }
+  

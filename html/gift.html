@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Regalo con Moño</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300italic" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="/css/gift.css" />
+</head>
+<body>
+  <div class="contenido">
+    <!-- Contenedor del regalo con SVG -->
+    <div class="gift-container">
+      <svg id="giftSVG" class="gift" viewBox="0 0 600 600" width="100%" height="100%">
+        <!-- Caja del regalo -->
+        <rect class="gift-box" x="100" y="250" width="400" height="300" rx="30" ry="30" fill="#FF6A00" />
+        
+        <!-- Grupo para la tapa del regalo -->
+        <g class="gift-lid-group">
+          <rect class="gift-lid" x="100" y="250" width="400" height="60" rx="15" ry="15" fill="#FF4500" />
+        </g>
+      </svg>
+      <!-- Imagen del moño -->
+      <img class="gift-bow-img" src="/assets/moño.png" alt="Moño de Regalo" />
+    </div>
+    <button class="open-gift-btn">¡Abrir Regalo!</button>
+  </div>
+  <script src="/script/gift.js"></script>
+</body>
+</html>

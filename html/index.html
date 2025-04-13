@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalo con Moño</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300italic" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="/css/gift.css">
+</head>
+<body>
+    <div class="contenido">
+        <h1 class="text">¡Haz clic para tu sorpresa!</h1>
+
+        <!-- Contenedor del regalo con SVG -->
+        <div class="gift-container">
+            <svg id="giftSVG" class="gift" viewBox="0 0 400 400" width="100%" height="100%">
+                <!-- Caja del regalo -->
+                <rect class="gift-box" x="100" y="150" width="200" height="250" rx="30" ry="30" fill="#FF6A00" />
+                
+                <!-- Tapa del regalo -->
+                <rect class="gift-lid" x="100" y="150" width="200" height="40" rx="20" ry="20" fill="#FF4500" />
+
+                <!-- Moño -->
+                <g class="bow">
+                    <path class="gift-ribbon-left" d="M 100 190 C 100 100, 150 100, 150 190" fill="transparent" stroke="#FF6347" stroke-width="14" />
+                    <path class="gift-ribbon-left" d="M 150 190 C 150 100, 200 100, 200 190" fill="transparent" stroke="#FF6347" stroke-width="14" />
+                    <path class="gift-ribbon-right" d="M 200 190 C 200 100, 250 100, 250 190" fill="transparent" stroke="#FF6347" stroke-width="14" />
+                    <path class="gift-ribbon-right" d="M 250 190 C 250 100, 300 100, 300 190" fill="transparent" stroke="#FF6347" stroke-width="14" />
+                    <path class="gift-ribbon-center" d="M 150 190 L 250 190" fill="transparent" stroke="#FF6347" stroke-width="14" />
+                </g>
+            </svg>
+
+            <!-- Imagen del moño sobre la tapa -->
+            <img class="gift-bow-img" src="/assets/moño.png" alt="Moño de Regalo">
+        </div>
+
+        <button class="open-gift-btn">¡Abrir Regalo!</button>
+    </div>
+
+    <div class="gift-message">
+        <p>¡Felicidades! El regalo se ha abierto.</p>
+    </div>
+
+    <script src="/script/gift.js"></script>
+</body>
+</html>
+
