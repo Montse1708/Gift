@@ -8,6 +8,6 @@ setTimeout(() => {
   // Redirige al hacer clic en el botón
   document.getElementById('sorpresaBtnContainer').addEventListener('click', function() {
     // Cambia la URL a la página de destino
-    window.location.href = "./html/gift.html";  // Reemplaza con la URL de destino
+    window.location.href = "gift.html";  // Reemplaza con la URL de destino
   });
     
