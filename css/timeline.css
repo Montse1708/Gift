@@ -10,9 +10,10 @@ body {
 }
 
 .timeline-container {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -29,10 +30,10 @@ h1 {
 
 .event {
   display: flex;
-  align-items: stretch; /* ajusta altura entre hijos */
-  margin: 20px 0;
+  align-items: stretch; /* Estirar para igualar alturas */
+  margin: 30px 0;
   position: relative;
-  flex-wrap: wrap; /* para responsive */
+  flex-wrap: wrap;
 }
 
 .event .dot {
@@ -52,24 +53,22 @@ h1 {
 }
 
 .film-frame {
-  flex: 0 0 150px; /* Puedes ajustar el tamaño según lo que necesites */
-  max-width: 150px;
-  margin-right: 20px;
+  flex: 0 0 120px;
+  max-width: 120px;
+  margin-right: 25px;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: stretch; /* Estirar para igualar alturas */
   justify-content: center;
 }
 
 .film-photo,
 .event-img {
-  height: 150px; /* Altura fija */
-  width: 100%; /* Ancho adaptado al contenedor */
-  display: block;
-  object-fit: cover; /* Asegura que la imagen se recorte y ajuste proporcionalmente */
-  border-radius: 20px;
-  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 10px;
+  display: block;
 }
 
 .event-content {
@@ -80,21 +79,26 @@ h1 {
   padding: 15px;
   text-align: left;
   min-width: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #333;
+  margin-bottom: 8px;
 }
 
 .event p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #555;
+  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
 .event small {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #888;
 }
 
@@ -113,65 +117,96 @@ h1 {
 .next-button-container {
   display: flex;
   justify-content: center;
-  margin-top: 30px; /* Espacio superior para separar el botón del contenido */
+  margin-top: 40px;
 }
 
 /* Estilo del botón */
 .next-button {
-  background-color: #387054; /* Fondo verde */
-  color: white; /* Texto blanco */
-  font-size: 1.2rem; /* Tamaño del texto */
-  padding: 12px 25px; /* Espaciado interno para el botón */
-  border: none; /* Elimina bordes */
-  border-radius: 25px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor cuando pasas el mouse sobre el botón */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves para los efectos */
+  background-color: #387054;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Efecto al pasar el mouse sobre el botón */
 .next-button:hover {
-  background-color: #2c5f3f; /* Fondo más oscuro */
-  transform: translateY(-3px); /* Eleva ligeramente el botón */
+  background-color: #2c5f3f;
+  transform: translateY(-2px);
 }
 
-/* Efecto al hacer clic en el botón */
 .next-button:active {
-  transform: translateY(2px); /* Baja ligeramente el botón */
+  transform: translateY(1px);
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {
+  .timeline-container {
+      padding-left: 15px;
+      padding-right: 15px; /* Añade padding derecho para separar del borde */
+  }
+
+  .timeline {
+      padding-left: 15px;
+      padding-right: 0; /* Ajusta el padding derecho de la línea de tiempo */
+  }
+
   .event {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 0;
+      flex-direction: row;
+      align-items: stretch; /* Estirar para igualar alturas */
+      margin-bottom: 25px;
+      flex-wrap: nowrap;
   }
 
   .film-frame {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: none;
-    align-items: center;
+      flex: 0 0 100px; /* Reduje el ancho de la imagen */
+      max-width: 100px;
+      margin-right: 15px; /* Añadí margen derecho a la imagen */
+      margin-bottom: 0;
+      height: auto; /* La altura se ajusta según el texto */
+      display: flex;
+      align-items: stretch; /* Estirar para igualar alturas */
   }
 
   .film-photo,
   .event-img {
-    width: 100%;
-    height: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
   }
 
   .event-content {
-    width: 100%;
+      flex: 1;
+      margin-top: 0;
+      text-align: left;
+      margin-right: 15px; /* Añadí margen derecho al texto */
+      padding: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
   }
 
-  .timeline {
-    padding-left: 0;
+  .event-title {
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+  }
+
+  .event p {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 5px;
+  }
+
+  .event small {
+      font-size: 0.75rem;
   }
 
   .event:before,
   .event .dot {
-    display: none;
+      display: none;
   }
 }
