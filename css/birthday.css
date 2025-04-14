@@ -78,3 +78,67 @@ body {
     transition: opacity 0.5s ease;
     z-index: 1000;
   }  
+
+/* Ajustes para que los globos se distribuyan mejor en pantallas pequeñas */
+.container {
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+/* Adaptación del tamaño del globo según el ancho de pantalla */
+@media (max-width: 1024px) {
+  .balloon-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .balloon-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .message {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .balloon {
+    width: 120px;
+    height: auto; /* Asegura que el alto se ajuste automáticamente */
+  }
+
+  .message {
+    font-size: 12px; /* Reduce el tamaño de la fuente */
+    padding: 5px 10px; /* Ajusta el padding para que haya más espacio */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    white-space: normal; /* Permite que el texto se ajuste y no se corte */
+    word-wrap: break-word; /* Rompe las palabras largas que no caben */
+  }
+
+  #nextBtn {
+    position: fixed;
+    top: auto;         /* Reseteamos el top fijo */
+    bottom: 40px;      /* Lo bajamos un poco desde abajo */
+    left: 50%;         /* Centrado horizontal */
+    transform: translateX(-50%);
+    margin: 0;
+    display: block;
+    margin-bottom: 20%;
+  } 
+
+  .title {
+    font-size: 20px; /* Reduce un poco el tamaño de la fuente */
+  }
+}
+
