@@ -5,6 +5,9 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    min-height: 100vh;
+    background: #2A7B9B;
+    background: linear-gradient(135deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(140, 138, 135, 1) 100%);
   }
   
   .timeline-container {
@@ -16,7 +19,7 @@ body {
   h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #d9534f;
+    color: #535050;
   }
   
   /* Estilos de la línea del tiempo */
@@ -35,7 +38,7 @@ body {
   .event .dot {
     width: 30px;
     height: 30px;
-    background-color: #d9534f;
+    background-color: #726c6c;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -81,7 +84,7 @@ body {
     left: -60px;
     width: 50px;
     height: 2px;
-    background-color: #d9534f;
+    background-color: #387054;
     z-index: 0;
   }
   

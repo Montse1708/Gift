@@ -2,6 +2,7 @@
 
 
 html, body {
+  min-height: 100vh;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -53,31 +54,34 @@ html, body {
   fill: #041291;
 }
 
-.gift-bow-img {
+.gift-content {
   position: absolute;
-  top: 235px; /* Ajusta para situar la imagen sobre la tapa */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 45%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 2;
   transition: transform 1s ease-in-out;
 }
 
-.gift-message {
-  display: none;
-  font-size: 2em;
-  color: #fff;
-  margin-top: 20px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 1s ease;
+.gift-bow-img {
+  position: absolute;
+  top: 30%; /* Ajuste relativo al contenedor */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  z-index: 2;
+  transition: transform 1s ease-in-out;
 }
 
 .open-gift-btn {
-  position: absolute; /* Coloca el botón sobre la caja */
-  top: 10%;  /* Centrado verticalmente sobre la caja */
-  left: 50%;  /* Centrado horizontalmente sobre la caja */
-  transform: translate(-50%, -50%);  /* Ajusta para centrar el botón correctamente */
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: linear-gradient(135deg, #385474, #35886b);
   color: white;
   padding: 20px 30px;
@@ -86,7 +90,7 @@ html, body {
   border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  z-index: 3;  /* Asegura que el botón esté por encima de otros elementos */
+  z-index: 3;
 }
 
 .open-gift-btn:hover {
@@ -95,4 +99,16 @@ html, body {
 
 .open-gift-btn:focus {
   outline: none;
+}
+
+@media (max-width: 480px) {
+  .gift-bow-img {
+    top: 20%; /* Mueve el moño más abajo */
+    width: 60%; /* Ajusta el tamaño del moño */
+    transform: translateX(-50%) translateY(0%); /* Ajusta la posición del moño */
+  }
+
+  .gift-lid {
+    transform: translateY(0%); /* Mueve la tapa más hacia abajo */
+  }
 }
