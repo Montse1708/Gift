@@ -1,90 +1,177 @@
 /* Estilos básicos */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    min-height: 100vh;
-    background: #2A7B9B;
-    background: linear-gradient(135deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(140, 138, 135, 1) 100%);
-  }
-  
-  .timeline-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #535050;
-  }
-  
-  /* Estilos de la línea del tiempo */
-  .timeline {
-    position: relative;
-    padding-left: 50px;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(140, 138, 135, 1) 100%);
+}
+
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #535050;
+}
+
+/* Estilos de la línea del tiempo */
+.timeline {
+  position: relative;
+  padding-left: 50px;
+}
+
+.event {
+  display: flex;
+  align-items: stretch; /* ajusta altura entre hijos */
+  margin: 20px 0;
+  position: relative;
+  flex-wrap: wrap; /* para responsive */
+}
+
+.event .dot {
+  width: 30px;
+  height: 30px;
+  background-color: #726c6c;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  left: -50px;
+  z-index: 1;
+}
+
+.film-frame {
+  flex: 0 0 150px; /* Puedes ajustar el tamaño según lo que necesites */
+  max-width: 150px;
+  margin-right: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.film-photo,
+.event-img {
+  height: 150px; /* Altura fija */
+  width: 100%; /* Ancho adaptado al contenedor */
+  display: block;
+  object-fit: cover; /* Asegura que la imagen se recorte y ajuste proporcionalmente */
+  border-radius: 20px;
+  display: block;
+  object-fit: cover;
+}
+
+.event-content {
+  flex: 1;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: left;
+  min-width: 200px;
+}
+
+.event-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.event p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.event small {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.event:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -60px;
+  width: 50px;
+  height: 2px;
+  background-color: #387054;
+  z-index: 0;
+}
+
+/* Estilo del contenedor del botón */
+.next-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Espacio superior para separar el botón del contenido */
+}
+
+/* Estilo del botón */
+.next-button {
+  background-color: #387054; /* Fondo verde */
+  color: white; /* Texto blanco */
+  font-size: 1.2rem; /* Tamaño del texto */
+  padding: 12px 25px; /* Espaciado interno para el botón */
+  border: none; /* Elimina bordes */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor cuando pasas el mouse sobre el botón */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves para los efectos */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.next-button:hover {
+  background-color: #2c5f3f; /* Fondo más oscuro */
+  transform: translateY(-3px); /* Eleva ligeramente el botón */
+}
+
+/* Efecto al hacer clic en el botón */
+.next-button:active {
+  transform: translateY(2px); /* Baja ligeramente el botón */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
   .event {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
   }
-  
-  .event .dot {
-    width: 30px;
-    height: 30px;
-    background-color: #726c6c;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    position: absolute;
-    left: -50px;
-    z-index: 1;
-  }
-  
-  .event-content {
-    padding-left: 40px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+
+  .film-frame {
+    margin-right: 0;
+    margin-bottom: 10px;
     width: 100%;
-    text-align: left;
+    max-width: none;
+    align-items: center;
   }
-  
-  .event-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
+
+  .film-photo,
+  .event-img {
+    width: 100%;
+    height: auto;
   }
-  
-  .event p {
-    font-size: 1rem;
-    color: #555;
+
+  .event-content {
+    width: 100%;
   }
-  
-  .event small {
-    font-size: 0.9rem;
-    color: #888;
+
+  .timeline {
+    padding-left: 0;
   }
-  
-  .event:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -60px;
-    width: 50px;
-    height: 2px;
-    background-color: #387054;
-    z-index: 0;
+
+  .event:before,
+  .event .dot {
+    display: none;
   }
-  
+}
